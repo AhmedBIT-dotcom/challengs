@@ -1,0 +1,132 @@
+
+:root{
+    --cream-color:hsl(30, 38%, 92%);
+    --dark-cyan: hsl(158, 36%, 37%);
+    --dark-blue:  hsl(212, 21%, 14%);
+    --dark-gray: hsl(228, 12%, 48%);
+}
+
+@font-face {
+    font-family: 'Fraunces';
+    src: url('../Fraunces/Fraunces-Italic-VariableFont_SOFT\,WONK\,opsz\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../Montserrat-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf');
+}
+
+  
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family: "Montserrat",sans-serif;
+    /* font-family: "Fraunces",sans-serif; */
+    background-color:var(--cream-color);
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+#product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: 1rem;
+}
+  
+img{
+    display: grid;
+    max-width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#product .product-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+#product .product-content .category {
+    font-size: 12px;
+    letter-spacing: 4px;
+
+}
+
+#product .product-content h1{
+    font-family: "Fraunces",serif;
+    font-size: 32px;
+    margin: 20px 0;
+    line-height: 1;
+    color: var(--dark-blue);
+}
+
+#product .product-content p{
+    font-size: 14px;
+    color: var(--dark-gray);
+    line-height: 1.6 ;
+}
+
+
+#product .product-content .price{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;    
+}
+
+#product .product-content .price .descount-price{
+    font-size: 32px;
+    color: var(--dark-cyan);
+    font-family: "Fraunces",serif;
+    margin-right: 20px;
+    font-weight:bold;
+}
+
+#product .product-content .cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    background-color:var(--dark-cyan) ;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    border-radius:8px ;
+    -webkit-border-radius:8px ;
+    -moz-border-radius:8px ;
+    -ms-border-radius:8px ;
+    -o-border-radius:8px ;
+    cursor: pointer;
+}
+
+#product .product-content .cart::before{
+    content: "";
+    background: url(./images/icon-cart.svg);
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+   @media (max-width : 700px){
+    #product{
+        grid-template-columns:1fr;
+    }
+
+    #product img{
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0;
+    }
+
+    #product .product-content{
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+}
+
